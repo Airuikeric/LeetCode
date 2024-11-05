@@ -10,6 +10,7 @@ class Solution {
                 nums[index++] = nums[i + 1];
             }
         }
+         // `index` is the count of unique elements
         return index;
     }
 }
