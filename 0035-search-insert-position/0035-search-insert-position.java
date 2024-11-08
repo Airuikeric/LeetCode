@@ -9,22 +9,21 @@ class Solution {
              0, 1, 2, 3
             [1, 3, 5, 6]
             
-            left = 0
-            right = 1
-            mid = 1, 0
             target = 2
+            left = 2
+            right = 3
                 
 */
         int left = 0; // 0
         int right = nums.length - 1; // 3
         
         while (left <= right) { // t, t
-            int mid = left + (right - left) / 2; // 1, 0
-            if (nums[mid] == target) {
+            int mid = left + (right - left) / 2; // 1, 2
+            if (nums[mid] == target) { // f, f
                 return mid;
-            } else if (nums[mid] < target) { // t
+            } else if (nums[mid] < target) { // t, f
                 left = mid + 1;
-            } else {
+            } else { // f
                 right = mid - 1;
             }
         }
