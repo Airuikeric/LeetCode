@@ -21,7 +21,6 @@ var isPalindrome = function(s) {
     return true;
 };
 
-// Helper function to check if a character is alphanumeric
 function isLetterOrDigit(char) {
     return /[a-zA-Z0-9]/.test(char);
 }
