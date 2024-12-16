@@ -1,5 +1,8 @@
 class Solution {
     public int searchInsert(int[] nums, int target) {
+        if (nums == null || nums.length <= 0) {
+            return -1;
+        }
         
         int left = 0;
         int right = nums.length - 1;
@@ -14,7 +17,6 @@ class Solution {
                 right = mid - 1;
             }
         }
-        
         return left;
     }
 }
