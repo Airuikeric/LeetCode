@@ -1,22 +1,22 @@
 class Solution {
     public int search(int[] nums, int target) {
         // base case
-         if (nums == null || nums.length <= 0) {
+         if (nums == null || nums.length <= 0) { // f 
             return -1;
          }
         
-        int left = 0;
-        int right = nums.length - 1;
+        int left = 0; // 0
+        int right = nums.length - 1; // 6
         
         // Step 1: Find the pivot point (smallest elemenmt in the array)
-        while (left < right) {
-            int mid = left + (right - left) / 2;
-            if (nums[mid] > nums[right]) {
+        while (left < right) { // t, t, t, f
+            int mid = left + (right - left) / 2; // 3, 5, 4
+            if (nums[mid] > nums[right]) { // t
                 // pivot is in the right half
-                left = mid + 1;
+                left = mid + 1; // left = 4
             } else {
                 // pivot is in the left half
-                right = mid;
+                right = mid; // 5, 4
             }
         }
         
