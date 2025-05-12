@@ -1,30 +1,30 @@
 class Solution {
     public int findPeakElement(int[] nums) {
-        // base case
         if (nums == null || nums.length <= 0) {
             return -1;
         }
-        
-        int left = 0;
-        int right = nums.length - 1;
-        
-        while (left < right) {
-            int mid = left + (right - left) / 2;
-            
-            // compare mid with mid + 1 to decide which side to search
-            if (nums[mid] > nums[mid + 1]) {
+
+        int left = 0; // 0
+        int right = nums.length - 1; // 3
+
+        while (left < right) { // t, t, f
+            int mid = left + (right - left) / 2; // 1, 2
+
+            if (nums[mid] > nums[mid + 1]) { // f, t
                 // peak is on the left side or at mid
-                right = mid;
-            } else {
-                // peak is on the right side 
-                left = mid + 1;
+                right = mid; // right = 2
+            } else { // t 
+                // peak is on the right side
+                left = mid + 1; // left = 2
             }
         }
-        
         return left;
     }
 }
+
 /*
-   •   Time Complexity: O(log n) due to binary search.
-   •   Space Complexity: O(1) because no additional space is used apart from a few variables.
+    index          0 1 2 3
+    Input: nums = [1,2,3,1]
+    Output: 2
+    Explanation: 3 
 */
